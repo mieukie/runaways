@@ -1,0 +1,20 @@
+.aboutHdr{ /*top right bottom left*/
+    margin: 5vw 2vw 1vw 1.5vw;
+    font-size: 2.5vw;
+    text-align: right;
+}
+
+.aboutP{
+    margin: 1vw 3vw 7vw 1.5vw;
+    font-size: 1.5vw;
+    line-height: 2vw;
+    text-align: right;
+}
+
+#aboutHdr2{
+    text-align: left;
+}
+
+#aboutP2{
+    text-align: left;
+}
