@@ -141,7 +141,7 @@
     animation: 1s ease-out;
     width: 77.4vw;
     height: 8vw;
-    background-image: linear-gradient(rgb(0 0 0/60%) 0 0), url(../img/home/BLK1Cover.PNG);
+    background-image: linear-gradient(rgb(0 0 0/60%) 0 0), url(../img/home/BLK1Cover.png);
     background-size: cover;
     background-position: 12% 50%;
     background-size: 100%;
