@@ -4,17 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>Art</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/art.css">
+    <link rel="stylesheet" href="https://unpkg.com/photoswipe@5.2.2/dist/photoswipe.css">
+    <link rel="stylesheet" href="https://unpkg.com/photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.css">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
-<body>
-    <section class="header">
+<body onload="generateImageDivs()">
+
+    <script type="module">
+        import Lightbox from 'https://unpkg.com/photoswipe/dist/photoswipe-lightbox.esm.js';
+        import PhotoSwipeDynamicCaption from 'https://unpkg.com/photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.esm.js';
+
+        const lightbox = new Lightbox({
+          gallery: '#my-gallery',
+          children: 'a',
+          pswpModule: () => import('https://unpkg.com/photoswipe'),
+          // Optional padding for images
+          loop: false,
+          paddingFn: (viewportSize) => {
+            return {
+                top: 30, bottom: 30, left: 70, right: 70
+            }
+          },
+        });
+
+        const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {
+            // Plugins options, for example:
+            type: 'auto',
+        });
+
+        // make sure you init photoswipe core after plugins are added
+        lightbox.init();
+        console.log("WHYYY is lightbox not working i am going to eat the sun");
+        </script>
+
+    <section class="header" id="header">
+        <div class="headerLine" id="headerLine"></div>
         <nav>
             <a href="index.html"><img id="mainLogo" src="img/RL.png"></a>
             <div id="title"><a href="index.html">THE RUNAWAYS</a></div>
-            <div class="nav-links">
+            <div id="navLinks" class="nav-links">
                 <ul>
                     <li><a href="index.html"> Home </a></li>
                     <li><a href="art.html"> Art </a></li>
@@ -25,47 +56,179 @@
                 </ul>
             </div>
         </nav>
+        <div class="headerLine"></div>
+        <div id="mobileNL" class="mobileNL">
+            <ul>
+                <li><a href="index.html"> Home </a></li>
+                <li><a href="art.html"> Art </a></li>
+                <li><a href="members.html"> Members </a></li>
+                <li><a href="projects.html"> Projects </a></li>
+                <li><a href="story.html"> Story </a></li>
+                <li><a href="about.html"> About </a></li>
+            </ul>
+        </div>
+        <div id="HL3" class="headerLine"></div>
     </section>
 
-    <div id="outer">
-        <div>
-            <div id="loop">
-                <div id="content">
-                    ABOUT
+    <div class="scrollingM">
+        <div id="outer">
+            <div>
+                <div id="loop">
+                    <div id="content">
+                        ART
+                    </div>
                 </div>
             </div>
         </div>
+        <div id="SBLine"></div>
     </div>
-    <div id="SBLine"></div>
 
-    <section>
-        <h1 class="aboutHdr">ABOUT THE RUNAWAYS</h1>
-            <p class="aboutP">The Runaways are a group of seven experienced adventurers currently residing in Waterdeep. This unique group of unlikely heroes, formed from the flames of a chaotic mistake, have experienced a wide variety of life-threatening perils, thrilling escapades, and comical shenanigans. Now, they must work together to learn how to manage a not-so-ordinary tavern in the very town where they first began. Learn more about their full story <a href="story.html">here</a>.</p>
-            
-        <h2 class="aboutHdr" id="aboutHdr2">ABOUT THIS WEBSITE</h2>
-            <p class="aboutP" id="aboutP2">If you're reading this, you already know all this stuff about the Runaways because you play one or more of its characters. This project was created for the purpose of learning the basics of web development and also because I thought it would look cool. It turned out kind of messy and definitely isn't compatible with mobile, but the process of putting it together has taught me a lot. This website definitely wouldn't have been possible without you guys' art and characters, so thanks! Hope you enjoy looking around! <br><br>-Miyuki</p>
-            <!--You probably already know all this stuff about the Runaways because, if you're on this website, you play one (or even two) of its characters. And there's also a high probability that your art is all over it too, so really this is your website as much as its mine! This website was created mainly for the purpose of learning the basics of web development and web design skills. I chose to build a website about the Runaways not only because they're a fun group and using them as a topic motivates me to keep working on it, but also to centralize and document some of the party's history and content. Taking the time to search for and look back on all the art, slideshows, headcanons, writing, etc. and the memories associated with them has given me a renewed sense of appreciation for these characters and the stories they've helped us to create. This project serves as a kind of love letter to that and to them, and definitely wouldn't have been possible without all the art or story from you guys reading this right now, so thank you!<br><br>All that being said, this website still is also still for learning purposes! So if you see anything that's messed up please let me know so I can fix it and be aware of it for next time. I'd also appreciate any input on the design, positioning of stuff, how easy it was to navigate the content, etc. Thanks again for taking time to read all this and I hope you enjoy looking through the site! <br><br>-Miyuki-->
-    </section>
+    <!--egg-->
 
-    <div id="SBLine2"></div>
+    <div class="searchBarCont">
+        
+        <form class="form">
+            <input id="search" type="search" class="input" placeholder="search... (ex: alice, mars, aly, full color)" onkeypress="return event.keyCode != 13"/>
+            <button id="searchBtn" class="search-button, btn-row" type="button" onclick="handleSearchRq()">search</button>
+            <button id="clear" class="clear-results, btn-row" onclick="resetAll()">reset</button>
+            <button id="filterMenuBtn" class="filter-menu-button, btn-row" type="button" onclick="toggleFilterMenu()">filter <a class="arrow" id="filterArrow"> ∨</a></button>
+            <button id="sortBtn" class="sort-button, btn-row" type="button" onclick="toggleSortMenu()">sort by<a class="arrow" id="sortArrow"> ∨</a></button></button>
+            <div id="filterMenu" class="filterMenu">
+                <div id="filterCont">
+                    <p id="disclaimer">*Check the box for anything you want to <b>EXCLUDE</b> from the search results. Hit search to apply your filters.</p>
+                    <fieldset>
+                        <legend>Characters <input type="checkbox" id="charSelectAll"></legend>
+                        <input type="checkbox" class='char' id="alice"><label for="alice">Alice Daylily</label><br>
+                        <input type="checkbox" class='char' id='mars'><label for="mars">Mars</label><br>
+                        <input type="checkbox" class='char' id="alura"><label for="alura">Alura Draconica</label><br>
+                        <input type="checkbox" class='char' id="paige"><label for="paige">Paige Noname</label><br>
+                        <input type="checkbox" class='char' id="sel"><label for="sel">Selthy Willowmire</label><br>
+                        <input type="checkbox" class='char' id="sal"><label for="sal">Salvier Willowmire</label><br>
+                        <input type="checkbox" class='char' id="lance"><label for="lance">Lance Amblecrown</label><br>
+                        <input type="checkbox" class='char' id="fana"><label for="fana">Fana Pineclaw</label><br>
+                        <input type="checkbox" class='char' id="penelope"><label for="penelope">Penelope Namishia</label><br>
+                        <input type="checkbox" class='char' id="darrak"><label for="darrak">Darrak Karel</label><br>
+                        <input type="checkbox" class='char' id="keth"><label for="keth">Keth</label><br>
+                        <input type="checkbox" class='char' id="keith"><label for="keith">Keith</label><br>
+                        <input type="checkbox" class='char' id="terry"><label for="terry">Terry Crews</label><br>
+                        <input type="checkbox" class='char' id="lif"><label for="lif">Lif</label><br>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Backstory Characters <input type="checkbox" id="bcharSelectAll"></legend>
+                        <input type='checkbox' class='bchar' id='ponder'><label for='ponder'>Ponder (Mars' mentor)</label><br>
+                        <input type='checkbox' class='bchar' id='osyris'><label for='osyris'>Osyris (Mars' brother)</label><br>
+                        <input type='checkbox' class='bchar' id='leo'><label for='leo'>Leo (old Mars backstory character)</label><br>
+                        <input type='checkbox' class='bchar' id='antagonist'><label for='antagonist'>Antagonist (old Mars backstory character)</label><br>
+                        <input type='checkbox' class='bchar' id='mary'><label for='mary'>Mary Daylily (Alice's mom)</label><br>
+                        <input type='checkbox' class='bchar' id='paul'><label for='paul'>Paul Daylily (Alice's dad)</label><br>
+                        <input type='checkbox' class='bchar' id='ephius'><label for='ephius'>Ephius Daylily (Alice's brother)</label><br>
+                        <input type='checkbox' class='bchar' id='tove'><label for='tove'>Tove (Eph's friend)</label><br>
+                        <input type='checkbox' class='bchar' id='julius'><label for='julius'>Julius (Eph's friend)</label><br>
+                        <input type='checkbox' class='bchar' id='sydney'><label for='sydney'>Sydney (Eph's friend)</label><br>
+                        <input type='checkbox' class='bchar' id='argo'><label for='argo'>Argo (Eph's friend)</label><br>
+                        <input type='checkbox' class='bchar' id='nk'><label for='nk'>Nightlily kid</label><br>
+                        <input type='checkbox' class='bchar' id='keva'><label for='keva'>Keva Aibek (Paige's mom)</label><br>
+                        <input type='checkbox' class='bchar' id='azam'><label for='azam'>Azam Aibek (Paige's dad)</label><br>
+                        <input type='checkbox' class='bchar' id='hadiyah'><label for='hadiyah'>Hadiyah Safak (Paige's ex)</label><br>
+                        <input type='checkbox' class='bchar' id='kenku'><label for='kenku'>Kenku (Lance's love interest)</label><br>
+                        <input type='checkbox' class='bchar' id='leshie'><label for='leshie'>Leshie Willowmire (Sel & Sal's sister)</label><br>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Artist <input type="checkbox" id="artistSelectAll"></legend>
+                        <input type='checkbox' class='artist' id='aly'><label for='aly'>Aly</label><br>
+                        <input type='checkbox' class='artist' id='marlia'><label for='marlia'>Marlia</label><br>
+                        <input type='checkbox' class='artist' id='miyuki'><label for='miyuki'>Miyuki</label><br>
+                        <input type='checkbox' class='artist' id='annie'><label for='annie'>Annie</label><br>
+                        <input type='checkbox' class='artist' id='chris'><label for='chris'>Chris</label><br>
+                        <input type='checkbox' class='artist' id='eve'><label for='eve'>Eve</label><br>
+                        <input type='checkbox' class='artist' id='ai'><label for='ai'>Artbreeder AI</label><br>
+                    </fieldset>
+                    <fieldset>
+                        <legend>AU <input type="checkbox" id="auSelectAll"></legend>
+                        <input type='checkbox' class='au' id='sins'><label for='sins'>7 Deadly Sins AU</label><br>
+                        <input type='checkbox' class='au' id='modern'><label for='modern'>Modern AU</label><br>
+                        <input type='checkbox' class='au' id='agape'><label for='agape'>Agape AU</label><br>
+                        <input type='checkbox' class='au' id='streetracer'><label for='streetracer'>Street Racer AU</label><br>
+                        <input type='checkbox' class='au' id='village'><label for='village'>Village AU</label><br>
+                        <input type='checkbox' class='au' id='band'><label for='band'>Band AU</label><br>
+                        <input type='checkbox' class='au' id='ballroom'><label for='ballroom'>Ballroom AU</label><br>
+                        <input type='checkbox' class='au' id='amongus'><label for='amongus'>Among Us AU</label><br>
+                        <input type='checkbox' class='au' id='cyberpunk'><label for='cyberpunk'>Cyberpunk AU</label><br>
+                        <input type='checkbox' class='au' id='misc'><label for='misc'>Misc/Unknown AU</label><br>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Medium</legend>
+                        <input type='checkbox' class='medium' id='traditional'><label for='traditional'>Traditional</label><br>
+                        <input type='checkbox' class='medium' id='digital'><label for='digital'>Digital</label><br>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Color</legend>
+                        <input type='checkbox' class='color' id='ncolor'><label for='ncolor'>no color</label><br>
+                        <input type='checkbox' class='color' id='scolor'><label for='scolor'>some color</label><br>
+                        <input type='checkbox' class='color' id='fcolor'><label for='fcolor'>full color</label><br>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Size</legend>
+                        <input type='checkbox' class='size' id='head'><label for='head'>head</label><br>
+                        <input type='checkbox' class='size' id='bust'><label for='bust'></label>bust<br>
+                        <input type='checkbox' class='size' id='torso'><label for='torso'></label>torso<br>
+                        <input type='checkbox' class='size' id='fbody'><label for='fbody'></label>full body<br>
+                    </fieldset>
+                    <fieldset>
+                        <legend>File</legend>
+                        <input type='checkbox' class='filetype' id='png'><label for='png'>PNG</label><br>
+                        <input type='checkbox' class='filetype' id='jpg'><label for='jpg'>JPG</label><br>
+                        <input type='checkbox' class='filetype' id='jpeg'><label for='jpeg'>JPEG</label><br>
+                    </fieldset>
+                </div>
+            </div>
+            <div id="sortCont">
+                <!--sort options go here-->
+            </div>
+        </form>
+        <div id="displayInfo">
+            <div class="resultsDisplay" id="topDisplay"></div>
+            <div id="filtersDisplay">0 filters currently applied.</div>
+        </div>
+    </div>
+    <div class="pswp-gallery" id="my-gallery"></div>
+    <div id="loadBtnContainer">
+        <div id="noResults"><b>Sorry, we couldn't find any results for that search!</b><br>
+        Make sure you seperate all search terms with a comma. Search is not case sensitive.<br><br>Try searching something else or clicking the reset button.
+        <i><br>See <a href="https://docs.google.com/document/d/1JwQnUkYEh8Af7zPci9EjogTxVXV8HWciHPy5xJaVl8g/edit?usp=sharing">here</a> for more information on searching.</i>
+        </div>
+        <button onclick="generateImageDivs()" id="loadMoreBtn">Load More</button>
+        <div class="resultsDisplay" id="bottomDisplay"></div>
+    </div>
+
+    <!--egg-->
+
+    <div class="scrollingM">
+        <div id="SBLine2"></div>
     <div id="outer2">
         <div>
             <div id="loop2">
                 <div id="content2">
-                    ABOUT
+                    ART 
                 </div>
             </div>
         </div>
     </div>
+    </div>
 
     <section class="footer">
+        <div class="bHeaderLine"></div>
         <img id="footerLogo" src="img/RL.png">
         <div id="footerTxt">
-            <p>Page last updated October 15, 2022</p>
+            <p>Page last updated May 31, 2023</p>
             <p>Trollskull Alley, North Ward of Waterdeep</p>
         </div>
+        <div class="bHeaderLine"></div>
     </section>
 
 <script src="js/main.js"></script>
+<script src="js/art.js"></script>
+
+
 </body>
 </html>

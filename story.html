@@ -10,11 +10,12 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>
-    <section class="header">
+    <section class="header" id="header">
+        <div class="headerLine" id="headerLine"></div>
         <nav>
             <a href="index.html"><img id="mainLogo" src="img/RL.png"></a>
             <div id="title"><a href="index.html">THE RUNAWAYS</a></div>
-            <div class="nav-links">
+            <div id="navLinks" class="nav-links">
                 <ul>
                     <li><a href="index.html"> Home </a></li>
                     <li><a href="art.html"> Art </a></li>
@@ -25,25 +26,40 @@
                 </ul>
             </div>
         </nav>
+        <div class="headerLine"></div>
+        <div id="mobileNL" class="mobileNL">
+            <ul>
+                <li><a href="index.html"> Home </a></li>
+                <li><a href="art.html"> Art </a></li>
+                <li><a href="members.html"> Members </a></li>
+                <li><a href="projects.html"> Projects </a></li>
+                <li><a href="story.html"> Story </a></li>
+                <li><a href="about.html"> About </a></li>
+            </ul>
+        </div>
+        <div id="HL3" class="headerLine"></div>
     </section>
 
-    <div id="outer">
-        <div>
-            <div id="loop">
-                <div id="content">
-                    STORY
+    <div class="scrollingM">
+        <div id="outer">
+            <div>
+                <div id="loop">
+                    <div id="content">
+                        STORY
+                    </div>
                 </div>
             </div>
         </div>
+        <div id="SBLine"></div>
     </div>
-    <div id="SBLine"></div>
 
 
     <section class="storyCont">
         This page is currently under construction! Thanks for visiting!
     </section>
 
-    <div id="SBLine2"></div>
+    <div class="scrollingM">
+        <div id="SBLine2"></div>
     <div id="outer2">
         <div>
             <div id="loop2">
@@ -53,13 +69,16 @@
             </div>
         </div>
     </div>
+    </div>
 
     <section class="footer">
+        <div class="bHeaderLine"></div>
         <img id="footerLogo" src="img/RL.png">
         <div id="footerTxt">
-            <p>Page last updated October 15, 2022</p>
+            <p>Page last updated April 6, 2023</p>
             <p>Trollskull Alley, North Ward of Waterdeep</p>
         </div>
+        <div class="bHeaderLine"></div>
     </section>
 
 <script src="js/main.js"></script>

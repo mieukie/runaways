@@ -10,11 +10,12 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>
-    <section class="header">
+    <section class="header" id="header">
+        <div class="headerLine" id="headerLine"></div>
         <nav>
             <a href="index.html"><img id="mainLogo" src="img/RL.png"></a>
             <div id="title"><a href="index.html">THE RUNAWAYS</a></div>
-            <div class="nav-links">
+            <div id="navLinks" class="nav-links">
                 <ul>
                     <li><a href="index.html"> Home </a></li>
                     <li><a href="art.html"> Art </a></li>
@@ -25,25 +26,66 @@
                 </ul>
             </div>
         </nav>
+        <div class="headerLine"></div>
+        <div id="mobileNL" class="mobileNL">
+            <ul>
+                <li><a href="index.html"> Home </a></li>
+                <li><a href="art.html"> Art </a></li>
+                <li><a href="members.html"> Members </a></li>
+                <li><a href="projects.html"> Projects </a></li>
+                <li><a href="story.html"> Story </a></li>
+                <li><a href="about.html"> About </a></li>
+            </ul>
+        </div>
+        <div id="HL3" class="headerLine"></div>
     </section>
 
-    <div id="outer">
-        <div>
-            <div id="loop">
-                <div id="content">
-                    PROJECTS
+    <div class="scrollingM">
+        <div id="outer">
+            <div>
+                <div id="loop">
+                    <div id="content">
+                        PROJECTS
+                    </div>
                 </div>
             </div>
         </div>
+        <div id="SBLine"></div>
     </div>
-    <div id="SBLine"></div>
 
-    <section class="bigPJCont">
-            <div class="pojPic" id="pojPic"><iframe id="CYOAiframe" src="https://docs.google.com/presentation/d/e/2PACX-1vQJZ3crpo_S7x7D4D3vHp0ot10gPvUs_R1ayQh3NGIrW02p6TWjrqY29KDxbQnsLCg2XL91-mB8L_4i/embed?start=false&loop=false&delayms=60000" frameborder="0" width="100%" height="100%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>
-            <div class="pojDesc" id="pojPic"><h2 class="pojTitleTxt">Choose Your Own Adventure (D&D Edition)</h2><p class="pojDescTxt">description will go here</p><button class='pojFollowBtn' onclick=pojFollow()>Go to Slides</button></div>
+    <section class="PJContCont">
+            <div class="PJCont">
+                <span class="pojLoad">loading...</span>
+                <div class="pojPic" id="pojPic">
+                    <iframe class="pojiframe" src="https://docs.google.com/presentation/d/e/2PACX-1vS2GuZ5HJ9EKe_SZK63ydAvvYsheoPdands-qaMznwfGYRrPetsTfQkKHVab4Q97uN00ge-XMXmi0v6/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="100%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                </div>
+                <div class="pojDesc"><h2 class="pojTitleTxt">What's In My Bag!?</h2><p class="pojDescTxt">This game was created by Aly and Miyuki in google slides November 2019 and is the first Runaways slideshow game in a collection of three. In this game, the player participates in a gameshow style trivia quiz where they are shown an object and must guess which Runaways character the object most likely belongs to.</p></div>
+            </div>
+            <div class="PJCont">
+                <span class="pojLoad">loading...</span>
+                <div class="pojPic" id="pojPic">
+                    <iframe class="pojiframe" src="https://docs.google.com/presentation/d/e/2PACX-1vQJZ3crpo_S7x7D4D3vHp0ot10gPvUs_R1ayQh3NGIrW02p6TWjrqY29KDxbQnsLCg2XL91-mB8L_4i/embed?start=false&loop=false&delayms=60000" frameborder="0" width="100%" height="100%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                </div>
+                <div class="pojDesc"><h2 class="pojTitleTxt">Choose Your Own Adventure (D&D Edition)</h2><p class="pojDescTxt">This game was created by Aly and Miyuki in google slides November 2019 (shortly after "What's in My Bag?!"). In this game, the player goes on a quest to track down members of the Runaways. The idea is that they have to make choices that will affect their adventure. However, in reality, all paths lead to the same ending, due to the creators not wanting to do all of that.</p></div>
+            </div>
+            <div class="PJCont">
+                <span class="pojLoad">loading...</span>
+                <div class="pojPic" id="pojPic">
+                    <iframe class="pojiframe" src="https://drive.google.com/file/d/1LRYOTTirEqPoSgl4oGdT8HylVrnzLutQ/preview" width="100%" height="100%" allow="autoplay"></iframe>
+                </div>
+                <div class="pojDesc"><h2 class="pojTitleTxt">Runaways Animatic</h2><p class="pojDescTxt">This animatic was created by Aly in January of 2021. The song is “The Gallows” by The Score, featuring Jamie N. Commons (2020). The animatic features characters of the Runaways in an intense combat situation and is the first project to feature Selthy and Salvièr as members of the party (they were added in 2020).</p></div>
+            </div>
+            <div class="PJCont">
+                <span class="pojLoad">loading...</span>
+                <div class="pojPic" id="pojPic">
+                    <iframe class="pojiframe" src="https://docs.google.com/presentation/d/e/2PACX-1vQE4Olx5bcC29Sg6m1knOfbudrixQ9J3g_PESqjnjFiemmFIfSeq2_Kb1fIxdo8vhZAdBcKxYnQtL-C/embed?start=false&loop=false&delayms=60000" frameborder="0" width="100%" height="100%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                </div>
+                <div class="pojDesc"><h2 class="pojTitleTxt">Runaways Christmas Adventures</h2><p class="pojDescTxt">This unfinished game was created by Aly and Miyuki in google slides, May 2020. It was originally titled “Runaways Escape Game” but was rebranded to a christmas theme in November of the same year. The game currently only has a partially functional character selection screen and only Alice and Alura have the beginning of their storylines available.</p></div>
+            </div>
     </section>
 
-    <div id="SBLine2"></div>
+    <div class="scrollingM">
+        <div id="SBLine2"></div>
     <div id="outer2">
         <div>
             <div id="loop2">
@@ -53,13 +95,16 @@
             </div>
         </div>
     </div>
+    </div>
 
     <section class="footer">
+        <div class="bHeaderLine"></div>
         <img id="footerLogo" src="img/RL.png">
         <div id="footerTxt">
-            <p>Page last updated October 14, 2022</p>
+            <p>Page last updated April 6, 2023</p>
             <p>Trollskull Alley, North Ward of Waterdeep</p>
         </div>
+        <div class="bHeaderLine"></div>
     </section>
 
 <script src="js/main.js"></script>

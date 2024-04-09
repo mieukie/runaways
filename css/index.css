@@ -1,3 +1,119 @@
+* {
+    user-select: none !important;
+}
+
+@media(max-width: 840px){
+    .bigContent{
+        grid-template-rows: 8vw 8vw 8vw 8vw 8vw 8vw 8vw 8vw 8vw 8vw 8vw 8vw 8vw 8vw 8vw 8vw 8vw 8vw 8vw 8vw 8vw !important;
+    }
+    #blk1{
+        width: 95vw !important;
+        height: 17vw !important;
+    }
+    #blk1Line{
+        height: 12vw !important;
+        margin: 2.5vw 3vw auto 2vw !important;
+    }
+    #blk1Txt{
+        font-size: 3.5vw !important;
+        margin: 3.9vw auto auto 4vw !important;
+        /*text-decoration: underline;*/
+    }
+    #blk1Txt::after{
+        display: none;
+    }
+    #blk1Txt:hover::after{
+        display: none;
+    }
+    #blk2{
+        grid-column-start: 7 !important;
+        grid-column-end: 11 !important;
+        grid-row-start: 14 !important;
+        grid-row-end: 20 !important;
+        width: 37vw !important;
+        height: 71vw !important;
+    }
+    #artBoxTxt{
+        font-size: 5vw !important;
+        margin: 63vw auto auto 24.5vw !important;
+    }
+    #blk3{
+        grid-column-start: 1;
+        grid-column-end: 11;
+        grid-row-start: 3 !important;
+        width: 95vw !important;
+        height: 44vw !important;
+    }
+    #membBoxTxt{
+        font-size: 5vw !important;
+        text-indent: 33vw !important;
+        line-height: 43vw !important;
+    }
+    #blk4{
+        grid-column-start: 1;
+        grid-column-end: 11;
+        grid-row-start: 8 !important;
+        grid-row-end: 15 !important;
+        width: 37vw !important;
+        height: 53vw !important;
+    }
+    #d20Pic{
+        width: 24vw !important;
+        height: 24vw !important;
+        margin-left: 6.3vw !important;
+        margin-top: 6.8vw !important;
+        font-size: 6.5vw !important;
+        line-height: 23vw !important;
+    }
+    #rollTxt{
+        width: 36vw !important;
+        height: 35vw !important;
+        font-size: 5vw !important;
+        margin-top: 36vw !important;
+        user-select: none !important;
+    }
+    #blk5{
+        grid-column-start: 1;
+        grid-column-end: 11;
+        grid-row-start: 18 !important;
+        grid-row-end: 19 !important;
+        width: 56vw !important;
+        height: 35vw !important;
+    }
+    #RLfancy{
+        width: 40vw !important;
+        height: 35vw !important;
+        margin-top: -3px !important;
+        margin-left: 7.5vw !important;
+    }
+    #blk6{
+        grid-column-start: 1 !important;
+        grid-column-end: 8;
+        grid-row-start: 8 !important;
+        grid-row-end: 15 !important;
+        width: 56vw !important;
+        height: 44vw !important;
+    }
+    #projectBoxTxt{
+        font-size: 5vw !important;
+        text-indent: 2vw !important;
+        line-height: 10vw !important;
+    }
+    #blk7{
+        grid-column-start: 1 !important;
+        grid-column-end: 11;
+        grid-row-start: 13 !important;
+        grid-row-end: 15 !important;
+        width: 56vw !important;
+        height: 44vw !important;
+    }
+    #storyBoxTxt{
+        font-size: 5vw !important;
+        text-indent: 38vw !important;
+        line-height: 75vw !important;
+    }
+}
+
 
 .bigContent{
     display: grid;
@@ -21,15 +137,14 @@
     grid-column-start: 1;
     grid-column-end: 9;
     grid-row-start: 1;
-    grid-row-end: 2;
-    animation: 1s ease-out 0s 1 slideInFromBottom;
+    grid-row-end: 3;
+    animation: 1s ease-out;
     width: 77.4vw;
     height: 8vw;
     background-image: linear-gradient(rgb(0 0 0/60%) 0 0), url(../img/home/BLK1Cover.PNG);
     background-size: cover;
     background-position: 12% 50%;
     background-size: 100%;
-    animation: 1s ease-out 0s 1 fadeIn;
 }
 
 #blk1Line{
@@ -87,7 +202,6 @@
     background-size: 220%;
     cursor: pointer;
     overflow: hidden;
-    animation: 1s ease-out 0s 1 fadeIn;
 }
 
 
@@ -122,7 +236,6 @@
     background-size: 140%;
     cursor: pointer;
     transition: background-size 2s, background-position 2s;
-    animation: 1s ease-out 0s 1 fadeIn;
 }
 
 #blk3:hover{
@@ -137,8 +250,8 @@
     color: white;
     font-size: 3vw;
     text-align:center;
-    text-indent: 18vw;
-    line-height: 23vw;
+    text-indent: 21vw;
+    line-height: 26vw;
 }
 
 #blk4{
@@ -152,7 +265,6 @@
     filter: grayscale(10%);
     background-size: cover;
     background-size: 130%;
-    animation: 1s ease-out 0s 1 fadeIn;
 }
 
 #d20Pic{
@@ -239,6 +351,16 @@
     width: 70%;
 }
 
+#luckBuff {
+    width: 200%;
+    height: 200%;
+    overflow: none;
+    filter: opacity(50%);
+    position: absolute;
+    display: none;
+    z-index: 2;
+}
+
 #blk5{
     grid-column-start: 1;
     grid-column-end: 5;
@@ -251,7 +373,6 @@
     filter: grayscale(10%);
     background-size: cover;
     background-size: 130%;
-    animation: 1s ease-out 0s 1 fadeIn;
 }
 
 #RLfancy{
@@ -302,7 +423,6 @@
     background-size: 170%;
     cursor: pointer;
     transition: background-size 2s, background-position 2s;
-    animation: 1s ease-out 0s 1 fadeIn;
 }
 
 #blk6:hover{
@@ -337,7 +457,6 @@
     background-size: 200%;
     cursor: pointer;
     transition: background-size 2s, background-position 2s;
-    animation: 1s ease-out 0s 1 fadeIn;
 }
 
 #blk7:hover{

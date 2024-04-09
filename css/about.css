@@ -1,20 +1,31 @@
 .aboutHdr{ /*top right bottom left*/
     margin: 5vw 2vw 1vw 1.5vw;
-    font-size: 2.5vw;
-    text-align: right;
+    font-size: 3rem;
+    text-align: left;
 }
 
 .aboutP{
-    margin: 1vw 3vw 7vw 1.5vw;
-    font-size: 1.5vw;
+    margin: .5vw 3vw 3vw 1.5vw;
+    font-size: 1.3rem;
     line-height: 2vw;
-    text-align: right;
-}
-
-#aboutHdr2{
     text-align: left;
 }
 
-#aboutP2{
-    text-align: left;
+a.linky:visited {
+    color:rgb(168, 129, 196)
+}
+
+a.linky:link {
+    color: rgb(120, 151, 228)
+}
+
+.holder {
+    margin: 0 0 0 0;
+}
+
+.cont {
+    background-color: rgba(47, 43, 43, 0);
+    color: rgb(17, 9, 9);
+    padding: 1rem 0 1rem 0;
+    margin: 0 1rem 0 1rem
 }
