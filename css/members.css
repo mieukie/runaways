@@ -73,7 +73,6 @@
     font-weight: 1.5vw;
     transition: all 1s ease;
     animation: 1 spinCurve 1.5s;
-    overflow: hidden;
 }
 
 .memberB{
